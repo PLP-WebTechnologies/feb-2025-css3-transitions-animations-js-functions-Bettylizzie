@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.5s ease, color 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.decoration {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.3;
+    z-index: -1;
+    transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.decoration-1 {
+    top: -50px;
+    left: -50px;
+}
+
+.decoration-2 {
+    bottom: -50px;
+    right: -50px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+
+p {
+    margin-bottom: 30px;
+    color: inherit;
+}
+
+.theme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.theme-btn {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.theme-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.theme-btn:active {
+    transform: scale(0.98);
+}
+
+@keyframes happyBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.selected-theme {
+    animation: happyBounce 0.6s ease;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.7);
+}
+
+.default-theme {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.default-theme .container {
+    background-color: white;
+}
+
+.default-theme .decoration-1 {
+    background-color: #a5d8ff;
+}
+
+.default-theme .decoration-2 {
+    background-color: #ffd8a8;
+}
+
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+.dark-theme .container {
+    background-color: #2d2d2d;
+}
+
+.dark-theme .decoration-1 {
+    background-color: #5c67ff;
+}
+
+.dark-theme .decoration-2 {
+    background-color: #ff5c80;
+}
+
+.nature-theme {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.nature-theme .container {
+    background-color: #f1f8e9;
+}
+
+.nature-theme .decoration-1 {
+    background-color: #81c784;
+}
+
+.nature-theme .decoration-2 {
+    background-color: #4db6ac;
+}
+
+.cozy-theme {
+    background-color: #fff3e0;
+    color: #e65100;
+}
+
+.cozy-theme .container {
+    background-color: #ffecb3;
+}
+
+.cozy-theme .decoration-1 {
+    background-color: #ffb74d;
+}
+
+.cozy-theme .decoration-2 {
+    background-color: #ff8a65;
+}
+
+.feedback-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.show-feedback {
+    opacity: 1;
+}
